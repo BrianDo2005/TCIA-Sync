@@ -71,9 +71,9 @@ class TCIAClient:
         resp = self.execute(serviceUrl , queryParameters)
         return resp
     
-    def get_series(self, collection = None , patientID = None, modality = None , studyInstanceUid = None , outputFormat = "json" ):
+    def get_series(self, collection = None , patientID = None, modality = None , studyInstanceUid = None , seriesInstanceUid = None , outputFormat = "json" ):
         serviceUrl = self.baseUrl + "/query/" + self.GET_SERIES
-        queryParameters = {"Collection" : collection , "PatientID" : patientID, "StudyInstanceUID" : studyInstanceUid , "Modality" : modality , "format" : outputFormat }
+        queryParameters = {"Collection" : collection , "PatientID" : patientID, "StudyInstanceUID" : studyInstanceUid , "SeriesInstanceUID" : seriesInstanceUid , "Modality" : modality , "format" : outputFormat }
         resp = self.execute(serviceUrl , queryParameters)
         return resp
     
